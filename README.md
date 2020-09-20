@@ -1,8 +1,5 @@
 ### Hi there 👋
 
-<!--
-**SiddharthUchil/SiddharthUchil** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
 Here are some ideas to get you started:
 
 - 🔭 I’m currently working on ... AI
@@ -13,4 +10,3 @@ Here are some ideas to get you started:
 - 📫 How to reach me: ... [Twitter](https://twitter.com/siddharthuchil)
 - 😄 Pronouns: ... He/Him
 - ⚡ Fun fact: ... I am a Canadian resident.
--->
