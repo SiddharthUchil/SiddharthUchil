@@ -7,4 +7,4 @@
 - 💬 Ask me about ... Aything
 - 📫 How to reach me: ... [Twitter](https://twitter.com/siddharthuchil)
 - 😄 Pronouns: ... He/Him
-- ⚡ Fun fact: ... I'm a Canadian resident.
+- ⚡ Fun fact: ... I'm learning to speak French!
