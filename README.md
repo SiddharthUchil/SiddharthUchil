@@ -1,6 +1,6 @@
 ## Hey, I'm Siddharth! <img src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Hi.gif" width=35 height=35>
 
-<img align="right" alt="Coder GIF" height=250 width=350 src="<img align="right" alt="Coder GIF" height=250 width=350 src="https://magiccopy.xyz/assets/images/hadder.gif" />
+<img align="right" alt="Coder GIF" height=250 width=350 src="<img align="right" alt="Coder GIF" height=250 width=350 src="https://media.giphy.com/media/UcK7JalnjCz0k/giphy.gif" />
 
 - 🔭 I’m currently working on ... AI
 - 🌱 I’m currently learning ... AWS
