@@ -35,5 +35,16 @@
 <code><img height="40" src="https://www.vectorlogo.zone/logos/golang/golang-horizontal.svg" title="golang"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" title="github"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg" title="git"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-ar21.svg" title="flask"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/docker/docker-ar21.svg" title="docker"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/djangoproject/djangoproject-ar21.svg" title="django"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/microsoft_azure/microsoft_azure-ar21.svg" title="azure"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/apache_cassandra/apache_cassandra-ar21.svg" title="cassandra"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/apache_spark/apache_spark-ar21.svg" title="spark"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" title="aws"></code>
+
+
+
+
 
 
