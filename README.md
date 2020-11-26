@@ -23,7 +23,7 @@
 <code><img height="40" src="https://www.vectorlogo.zone/logos/pytorch/pytorch-ar21.svg" title="pytorch"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/plot_ly/plot_ly-ar21.svg" title="plotly"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/usepanda/usepanda-ar21.svg" title="pandas"></code>
-<code><img height="40" src="https://www.vectorlogo.zone/logos/r-project/r-project-icon.svg" title="R"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/r-project/r-project-ar21.svg" title="R"></code>
 
 
 <code><img height="40" src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" title="flask"></code>
