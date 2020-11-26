@@ -4,7 +4,7 @@
 </p>
 
 <p>
-  <em>
+  
 - 🔭 I’m currently working on ... AI
 - 🌱 I’m currently learning ... AWS
 - 👯 I’m looking to collaborate on ... AI 
@@ -13,7 +13,7 @@
 - 📫 How to reach me: ... [Twitter](https://twitter.com/siddharthuchil)
 - 😄 Pronouns: ... He/Him
 - ⚡ Fun fact: ... I'm learning to speak French!
-  </em>
+  
  </p>
 
 
