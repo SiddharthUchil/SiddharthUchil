@@ -17,6 +17,14 @@
 <code><img height="40" src="https://devicons.github.io/devicon/devicon.git/icons/css3/css3-original-wordmark.svg" title="css"></code>
 <code><img height="40" src="https://devicons.github.io/devicon/devicon.git/icons/javascript/javascript-original.svg" title="javascript"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/postgresql/postgresql-icon.svg" title="postgresql"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/microsoft_powerbi/microsoft_powerbi-icon.svg" title="powerbi"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/scala-lang/scala-lang-icon.svg" title="scala"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/sparkpost/sparkpost-icon.svg" title="spark"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/pytorch/pytorch-ar21.svg" title="pytorch"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/plot_ly/plot_ly-ar21.svg" title="plotly"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/usepanda/usepanda-ar21.svg" title="pandas"></code>
+<code><img height="40" src="https://www.vectorlogo.zone/logos/r-project/r-project-icon.svg" title="R"></code>
+
 
 <code><img height="40" src="https://www.vectorlogo.zone/logos/pocoo_flask/pocoo_flask-icon.svg" title="flask"></code>
 <code><img height="40" src="https://devicons.github.io/devicon/devicon.git/icons/mongodb/mongodb-original-wordmark.svg" title="mongodb"></code>
