@@ -55,4 +55,7 @@
 </p>
 
 
+### Follow me
+
+[![Linkedin Badge](https://img.shields.io/badge/-Kishan%20Lal-blue?style=flat-circle&logo=Linkedin&logoColor=white&link=https://https://www.linkedin.com/in/siddharthuchil/)](https://www.linkedin.com/in/siddharthuchil/) [![Twitter Badge](https://img.shields.io/badge/-@kishan0725-1ca0f1?style=flat-circle&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/siddharthuchil)](https://twitter.com/siddharthuchil) [![GitHub Badge](https://img.shields.io/badge/-@kishan0725-24292e?style=flat-circle&labelColor=24292e&logo=github&logoColor=white&link=https://github.com/SiddharthUchil)](https://github.com/SiddharthUchil) [![Gmail Badge](https://img.shields.io/badge/-@kishanlal0725-d54b3d?style=flat-circle&labelColor=d54b3d&logo=gmail&logoColor=white&link=mailto:siddharth.uchil@gmail.com)](mailto:siddharth.uchil@gmail.com)
 
