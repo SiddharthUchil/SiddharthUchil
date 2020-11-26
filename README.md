@@ -1,5 +1,5 @@
 ## Hey, I'm Siddharth! <img src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Hi.gif" width=35 height=35>
-<img align="right" alt="Coder GIF" height=250 width=350 src="https://media.giphy.com/media/Cc2lafq8xjgu4/giphy.gif" />
+<img align="right" alt="Coder GIF" height=200 width=350 src="https://media.giphy.com/media/Cc2lafq8xjgu4/giphy.gif" />
 
 
 - 🔭 I’m currently working on ... AI
