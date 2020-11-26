@@ -1,4 +1,5 @@
-### Hi there 👋
+## Hey, I'm Siddharth! <img src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Hi.gif" width=35 height=35>
+
 
 - 🔭 I’m currently working on ... AI
 - 🌱 I’m currently learning ... AWS
