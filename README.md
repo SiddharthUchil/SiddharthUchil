@@ -1,7 +1,10 @@
 ## Hey, I'm Siddharth! <img src="https://raw.githubusercontent.com/TheDudeThatCode/TheDudeThatCode/master/Assets/Hi.gif" width=35 height=35>
-
+<p>
 <img align="right" alt="Coder GIF" height=210 width=350 src="https://media.giphy.com/media/Cc2lafq8xjgu4/giphy.gif" />
+</p>
 
+<p>
+  <em>
 - 🔭 I’m currently working on ... AI
 - 🌱 I’m currently learning ... AWS
 - 👯 I’m looking to collaborate on ... AI 
@@ -10,7 +13,8 @@
 - 📫 How to reach me: ... [Twitter](https://twitter.com/siddharthuchil)
 - 😄 Pronouns: ... He/Him
 - ⚡ Fun fact: ... I'm learning to speak French!
-
+  </em>
+ </p>
 
 
 
