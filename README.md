@@ -2,7 +2,7 @@
 
 <p>Welcome to my page! </br> I'm Siddharth, Data Scientist from <img src="https://www.flaticon.com/svg/static/icons/svg/197/197430.svg" width="13"/> <b>Toronto, Canada</b>
 
-<p alight = "right">
+<p align = "right">
 <img alt="Coder GIF" height=210 width=350 src="https://media.giphy.com/media/Cc2lafq8xjgu4/giphy.gif" />
 </p>
 
