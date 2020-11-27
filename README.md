@@ -19,8 +19,6 @@
   
  </p>
 
-### Spotify Playing 🎧
-
 ### Languages and Tools:
 
 <code><img height="40" src="https://www.vectorlogo.zone/logos/pytorch/pytorch-ar21.svg" title="pytorch"></code>
