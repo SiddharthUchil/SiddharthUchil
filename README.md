@@ -64,7 +64,6 @@
 </p>
 
 
-### Follow me
-
-[![Linkedin Badge](https://img.shields.io/badge/-Siddharth%20U-blue?style=flat-circle&logo=Linkedin&logoColor=white&link=https://https://www.linkedin.com/in/siddharthuchil/)](https://www.linkedin.com/in/siddharthuchil/) [![Twitter Badge](https://img.shields.io/badge/-siddharthuchil-blue?style=flat-circle&labelColor=1ca0f1&logo=twitter&logoColor=white&link=https://twitter.com/siddharthuchil)](https://twitter.com/siddharthuchil) [![GitHub Badge](https://img.shields.io/badge/-Siddharth%20U-24292e?style=flat-circle&labelColor=24292e&logo=github&logoColor=white&link=https://github.com/SiddharthUchil)](https://github.com/SiddharthUchil) [![Gmail Badge](https://img.shields.io/badge/-siddharth.uchil-red?style=flat-circle&labelColor=d54b3d&logo=gmail&logoColor=white&link=mailto:siddharth.uchil@gmail.com)](mailto:siddharth.uchil@gmail.com)
-
+<h3>Where to find me</h3>
+<p><a href="https://github.com/SiddharthUchil" target="_blank"><img alt="Github" src="https://img.shields.io/badge/GitHub-%2312100E.svg?&style=for-the-badge&logo=Github&logoColor=white" /></a> <a href="https://twitter.com/siddharthuchil" target="_blank"><img alt="Twitter" src="https://img.shields.io/badge/twitter-%231DA1F2.svg?&style=for-the-badge&logo=twitter&logoColor=white" /></a> <a href="https://www.linkedin.com/in/siddharthuchil" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-%230077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white" /></a> <a href="https://www.linkedin.com/in/siddharthuchil" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/-siddharth.uchil-red?style=flat-circle&labelColor=d54b3d&logo=gmail&logoColor=white" /></a>
+  
