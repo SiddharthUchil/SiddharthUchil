@@ -1,5 +1,10 @@
 <h1><img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="30"/> Hey, nice to see you.</h1>
 
+<div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+
+<p>Welcome to my page! </br> I'm Siddharth, Data Scientist from <img src="https://image.flaticon.com/icons/svg/197/197560.svg" width="13"/> <b>Lorient, France</b>, currently living in <img src="https://image.flaticon.com/icons/svg/197/197564.svg" width="13"/> <b>Stockholm, Sweden</b>. </p>
+
 <p>
 <img align="right" alt="Coder GIF" height=210 width=350 src="https://media.giphy.com/media/Cc2lafq8xjgu4/giphy.gif" />
 </p>
