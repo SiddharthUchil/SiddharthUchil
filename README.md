@@ -22,7 +22,7 @@
 
 
 
-### Worked with 
+### Languages and Tools:
 
 <code><img height="40" src="https://www.vectorlogo.zone/logos/pytorch/pytorch-ar21.svg" title="pytorch"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/plot_ly/plot_ly-ar21.svg" title="plotly"></code>
