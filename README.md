@@ -1,6 +1,6 @@
 <h1><img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="30"/> Hey, nice to see you.</h1>
 
-<p>Welcome to my page! </br> I'm Siddharth, Data Scientist from <img src="https://www.flaticon.com/svg/static/icons/svg/197/197430.svg" width="13"/> <b>Toronto, Canada</b>
+<p>“The most beautiful thing we can experience is the Mysterious.”- Albert Einstein  </br> Welcome to my Page ! I'm Siddharth, and my current obsession is with Transformer-Based Language Models!, I'm also a <img src="https://www.flaticon.com/svg/static/icons/svg/197/197430.svg" width="13"/> <b>Canadian resident.</b>
 
 <p>
 <img align = "right" alt="Coder GIF" height=210 width=350 src="https://media.giphy.com/media/Cc2lafq8xjgu4/giphy.gif" />
