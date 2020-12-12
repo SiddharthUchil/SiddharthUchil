@@ -1,6 +1,6 @@
 <h4><img src="https://emojis.slackmojis.com/emojis/images/1531849430/4246/blob-sunglasses.gif?1531849430" width="30"/> “The most beautiful thing we can experience is the Mysterious.”- Albert Einstein</h4>
 
-<p> Welcome to my Page ! I'm Siddharth, and i'm currently obsessed with Transformer!-Based Learning Models ( BERT, XLNet, RoBERTa, DistilBERT, GPT-2, GPT-3, ALBERT, MEGATRON, AlphaFold 2! )
+<p> Welcome to my Page ! I'm Siddharth, and my obsession is with Transformer!-Based Learning Models ( BERT, XLNet, RoBERTa, DistilBERT, GPT-2, GPT-3, ALBERT, MEGATRON, AlphaFold 2! )
 <p>
   
 <img align = "right" alt="Coder GIF" height=210 width=350 src="https://media.giphy.com/media/Cc2lafq8xjgu4/giphy.gif" />
