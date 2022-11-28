@@ -50,13 +50,6 @@
 <code><img height="40" src="https://www.vectorlogo.zone/logos/apache_spark/apache_spark-ar21.svg" title="spark"></code>
 <code><img height="40" src="https://www.vectorlogo.zone/logos/amazon_aws/amazon_aws-ar21.svg" title="aws"></code>
 
-### GitHub Stats
-
-<p align="left">
-<a href = "https://github.com/SiddharthUchil">
-  <img src="https://github-readme-stats-aj8vj7k8x.vercel.app/api/top-langs/?username=SiddharthUchil&layout=compact&title_color=ffc857&icon_color=8ac926&text_color=daf7dc&bg_color=151515&card_width=400">
-</a>
-</p>
 
 
 <h3>Where to find me</h3>
