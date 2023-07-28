@@ -2,7 +2,8 @@
 
 [![Typing SVG](https://readme-typing-svg.herokuapp.com/?color=edbd4e&size=35&center=true&vCenter=true&width=1000&lines=Welcome+To+My+Page+;I'm+Siddharth+Uchil;I'm+obsessed+with+Transformers;+and+Diffusion+Models)](https://git.io/typing-svg)
 
-[![Siddharth's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=SiddharthUchil&bg_color=242526&color=edbd4e&line=f0ec02&point=edbd4e&area=true&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
+[![Siddharth's github activity graph](https://github-readme-activity-graph.vercel.app/graph?username=SiddharthUchil&bg_color=242526&color=edbd4e&point=edbd4e&area=true&hide_border=true)](https://github.com/SiddharthUchil/github-readme-activity-graph)
+
 
 <p align="center">
   <img src="https://github-profile-trophy.vercel.app/?username=SiddharthUchil&theme=juicyfresh&row=2&no-bg=true&column=3&margin-w=15&margin-h=15" />
