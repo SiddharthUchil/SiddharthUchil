@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="amber">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>siddharth@github: ~/portfolio</title>
+<meta name="description" content="Interactive terminal portfolio of Siddharth Uchil, Senior AI Engineer - Generative AI & MLOps. Type commands to explore.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%230d1117'/%3E%3Ctext x='6' y='22' font-family='monospace' font-size='16' fill='%23edbd4e'%3E%3E_%3C/text%3E%3C/svg%3E">
+<style>
+  :root {
+    --bg: #0d1117;
+    --panel: #161b22;
+    --accent: #edbd4e;
+    --accent-dim: #9a7b2f;
+    --text: #c9d1d9;
+    --muted: #8b949e;
+    --ok: #3fb950;
+    --err: #f85149;
+    --glow: rgba(237, 189, 78, 0.35);
+  }
+  html[data-theme="green"] {
+    --accent: #4ae383;
+    --accent-dim: #2c8a50;
+    --glow: rgba(74, 227, 131, 0.35);
+  }
+  html[data-theme="mono"] {
+    --accent: #e6edf3;
+    --accent-dim: #6e7681;
+    --glow: transparent;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Cascadia Code", "Fira Code", "JetBrains Mono", "SF Mono", Consolas, "Liberation Mono", monospace;
+    font-size: 15px;
+    line-height: 1.55;
+    display: flex;
+    flex-direction: column;
+  }
+  /* CRT scanlines: the one indulgence. Faint, and gone under reduced motion or mono theme. */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,0.16) 0 1px, transparent 1px 3px);
+    opacity: 0.35;
+    z-index: 3;
+  }
+  html[data-theme="mono"] body::after { display: none; }
+  @media (prefers-reduced-motion: reduce) { body::after { display: none; } }
+
+  #screen {
+    flex: 1;
+    overflow-y: auto;
+    padding: 28px 18px 16px;
+    cursor: text;
+  }
+  #col { max-width: 860px; margin: 0 auto; }
+  #out { word-break: break-word; }
+  #out a, #exitcard a {
+    color: var(--accent);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+  #out a:hover, #exitcard a:hover { background: var(--accent); color: var(--bg); text-decoration: none; }
+  pre { font: inherit; white-space: pre; overflow-x: auto; }
+  .line { min-height: 1.55em; }
+  .accent { color: var(--accent); text-shadow: 0 0 8px var(--glow); }
+  .dim { color: var(--muted); }
+  .ok { color: var(--ok); }
+  .err { color: var(--err); }
+  .eyebrow { color: var(--accent-dim); letter-spacing: 0.12em; font-size: 12px; }
+  .block { margin: 10px 0 14px; white-space: pre-wrap; }
+
+  #banner pre {
+    color: var(--accent);
+    text-shadow: 0 0 10px var(--glow);
+    font-size: clamp(5px, 1.55vw, 13px);
+    line-height: 1.25;
+  }
+
+  /* prompt row */
+  #promptrow { display: flex; align-items: baseline; gap: 0; }
+  #ps1 { color: var(--accent); white-space: nowrap; text-shadow: 0 0 8px var(--glow); }
+  #cmd {
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--text);
+    font: inherit;
+    caret-color: var(--accent);
+    min-width: 40px;
+  }
+
+  /* command chips: the touch path */
+  #chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    padding: 10px 18px;
+    border-top: 1px solid #21262d;
+    background: var(--bg);
+  }
+  #chips button {
+    font: inherit;
+    font-size: 13px;
+    color: var(--accent);
+    background: transparent;
+    border: 1px solid var(--accent-dim);
+    border-radius: 3px;
+    padding: 3px 10px;
+    cursor: pointer;
+  }
+  #chips button:hover { background: var(--accent); color: var(--bg); }
+  button:focus-visible, #cmd:focus-visible, a:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+  }
+
+  /* tmux-style status bar */
+  #status {
+    display: flex;
+    gap: 0;
+    font-size: 12.5px;
+    background: var(--panel);
+    color: var(--muted);
+    border-top: 1px solid #21262d;
+    padding: 4px 12px;
+    white-space: nowrap;
+    overflow: hidden;
+  }
+  #status .seg { padding: 0 10px; }
+  #status .seg:first-child { color: var(--bg); background: var(--accent); font-weight: 600; }
+  #status .spacer { flex: 1; }
+
+  /* exit screen */
+  #exitcard {
+    position: fixed;
+    inset: 0;
+    background: var(--bg);
+    z-index: 5;
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 14px;
+    padding: 24px;
+  }
+  #exitcard.show { display: flex; }
+  #exitcard .x { font-size: 40px; }
+  #exitcard button {
+    font: inherit;
+    color: var(--bg);
+    background: var(--accent);
+    border: none;
+    padding: 8px 22px;
+    border-radius: 3px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+
+  @media (max-width: 640px) {
+    body { font-size: 13px; }
+    #screen { padding: 16px 10px 10px; }
+    #status .hidesm { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<main id="screen" aria-label="terminal">
+  <div id="col">
+    <div id="out" role="log" aria-live="polite"></div>
+    <div id="promptrow" hidden>
+      <span id="ps1">guest@siddharth:~$&nbsp;</span><input id="cmd" type="text" autocomplete="off" autocapitalize="off" spellcheck="false" aria-label="type a command, try help">
+    </div>
+  </div>
+</main>
+
+<div id="chips" aria-label="quick commands"></div>
+
+<div id="status">
+  <span class="seg">[portfolio]</span>
+  <span class="seg" id="st-cmds">0 cmds</span>
+  <span class="seg" id="st-theme">theme:amber</span>
+  <span class="spacer"></span>
+  <span class="seg hidesm dim">type 'help' to explore</span>
+  <span class="seg" id="st-clock"></span>
+</div>
+
+<div id="exitcard">
+  <div class="x" id="exit-x">✗</div>
+  <div id="exit-title" class="accent"></div>
+  <div class="dim">But shipping never really stops.</div>
+  <div>
+    <a href="https://www.linkedin.com/in/siddharthuchil/">linkedin</a> ·
+    <a href="https://github.com/SiddharthUchil">github</a> ·
+    <a href="mailto:siddharth.uchil@gmail.com">email</a>
+  </div>
+  <button id="reboot">reopen terminal</button>
+</div>
+
+<script>
+"use strict";
+const out = document.getElementById("out");
+const promptrow = document.getElementById("promptrow");
+const cmd = document.getElementById("cmd");
+const screenEl = document.getElementById("screen");
+const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+const BANNER = [
+"█████ ███ ████  ████  █   █  ███  ████  █████ █   █",
+"█      █  █   █ █   █ █   █ █   █ █   █   █   █   █",
+"█████  █  █   █ █   █ █████ █████ ████    █   █████",
+"    █  █  █   █ █   █ █   █ █   █ █  █    █   █   █",
+"█████ ███ ████  ████  █   █ █   █ █   █   █   █   █"
+].join("\n");
+
+const IDENTITY =
+`<span class="accent">siddharth uchil</span>
+senior ai engineer - generative ai & mlops @ manulife
+toronto, canada · production rag · agents · llm evaluation`;
+
+const T = {}; // command table
+
+T.help = () => `<span class="eyebrow">COMMANDS</span>
+<pre>
+  about        who is siddharth
+  experience   career timeline (git log style)
+  projects     selected repos, with links
+  skills       cat skills.yaml
+  stats        live github stats (fetched now)
+  contact      how to reach me
+  theme        phosphor: theme amber | green | mono
+  banner       reprint the welcome banner
+  clear        wipe the screen
+  exit         close the session
+</pre>
+<span class="dim">tips: ↑/↓ history · tab completes · /about works too</span>`;
+
+T.about = () => `<span class="eyebrow">ABOUT</span>
+<div class="block">AI engineer specializing in <span class="accent">production RAG and lightweight-agentic systems</span>,
+with a focus on rigorous evaluation and Responsible-AI guardrails in
+regulated financial-services environments.
+
+I build retrieval-grounded assistants - and the MLOps and evaluation
+harnesses that keep them trustworthy once they're in front of real
+users. Bridging the gap between GenAI demos and production is the job.</div>`;
+
+T.whoami = () => `<div class="block">${IDENTITY}</div>`;
+
+T.experience = () => `<span class="eyebrow">$ git log --career --oneline</span>
+<pre>
+* 2024-now   <span class="accent">Manulife - Senior AI Engineer, Generative AI & MLOps</span>
+│            production RAG assistants for Group Benefits & Wealth Mgmt;
+│            LangGraph orchestration, eval frameworks, security guardrails,
+│            live-agent handoff for a high-volume contact centre
+│
+* 2022-2024  <span class="accent">Canadian Western Bank - Senior Data Science Consultant</span>
+│            cloud-native ML for commercial financial documents;
+│            MLOps + AI governance (CI/CD retraining, IaC);
+│            96.2% doc-classification accuracy (CNN + BiLSTM ensemble)
+│
+* 2020-2022  <span class="accent">Westland Insurance - Data Science Consultant</span>
+│            transformers for NLP + visual anomaly detection (F1 0.855);
+│            real-time risk & sentiment signals for investigations
+│
+* 2018-2020  <span class="accent">Suncor Energy - Consultant</span>
+             AI metadata extraction over 1M+ regulatory documents;
+             OCR + automation: -75% manual processing time
+</pre>`;
+
+const REPO = (n) => `<a href="https://github.com/SiddharthUchil/${n}" target="_blank" rel="noopener">${n}/</a>`;
+T.projects = () => `<span class="eyebrow">$ ls -la ./projects</span>
+<div class="block">${REPO("canvas-ai")}
+  interactive systems-architecture builder (TypeScript)
+${REPO("langflow-research-assistant")}
+  production-ready AI research & study assistant (Langflow)
+${REPO("Vehicle-Counting-YOLOv8-DeepSORT")}
+  vehicle counting with YOLOv8 + DeepSORT
+${REPO("ANPR-YOLOv8")}
+  automatic number-plate detection & recognition
+${REPO("FastAPI-LangChain-Streaming")}
+  streaming RAG with LCEL, FastAPI backend + frontend
+${REPO("pytorch-lora")}
+  LoRA (Low-Rank Adaptation) from scratch in PyTorch</div>`;
+
+T.skills = () => `<span class="eyebrow">$ cat skills.yaml</span>
+<pre>
+genai:     [RAG, LangGraph, LangChain, LlamaIndex, prompt engineering,
+            LLM evaluation - MLflow · Ragas · DeepEval]
+mlops:     [FastAPI, Docker, Kubernetes, GitHub Actions, Terraform,
+            Airflow, MLflow, Evidently, Prometheus, Grafana]
+cloud:     [Azure - AKS · Functions · OpenAI, AWS, GCP]
+data:      [Azure AI Search - vector + agentic, Cosmos DB, PostgreSQL,
+            MongoDB, Azure SQL]
+languages: [Python, SQL, TypeScript, C++, Rust]
+</pre>`;
+
+T.contact = () => `<span class="eyebrow">$ ping siddharth</span>
+<div class="block"><span class="dim">PING siddharth ... 3 packets transmitted, 3 received, 0% packet loss</span>
+
+email     <a href="mailto:siddharth.uchil@gmail.com">siddharth.uchil@gmail.com</a>
+linkedin  <a href="https://www.linkedin.com/in/siddharthuchil/" target="_blank" rel="noopener">in/siddharthuchil</a>
+x         <a href="https://twitter.com/siddharthuchil" target="_blank" rel="noopener">@siddharthuchil</a></div>`;
+
+T.banner = () => `<div id="banner"><pre>${BANNER}</pre></div><span class="dim">senior ai engineer · generative ai & mlops · toronto</span>`;
+
+T.theme = (arg) => {
+  const themes = ["amber", "green", "mono"];
+  if (!themes.includes(arg)) return `usage: theme ${themes.join(" | ")}`;
+  document.documentElement.setAttribute("data-theme", arg);
+  document.getElementById("st-theme").textContent = "theme:" + arg;
+  return `phosphor set to <span class="accent">${arg}</span>`;
+};
+
+T.clear = () => { out.innerHTML = ""; return null; };
+
+T.history = () => history.length
+  ? `<pre>${history.map((h, i) => `  ${String(i + 1).padStart(3)}  ${esc(h)}`).join("\n")}</pre>`
+  : "history is empty";
+
+T.ls = () => `<pre>about.md  experience.log  projects/  skills.yaml  stats.json  contact.txt</pre>`;
+
+T.stats = async () => {
+  print(`<span class="dim">fetching live data from api.github.com ...</span>`);
+  try {
+    const [u, r1, r2] = await Promise.all([
+      fetch("https://api.github.com/users/SiddharthUchil").then(x => { if (!x.ok) throw 0; return x.json(); }),
+      fetch("https://api.github.com/users/SiddharthUchil/repos?per_page=100&page=1").then(x => { if (!x.ok) throw 0; return x.json(); }),
+      fetch("https://api.github.com/users/SiddharthUchil/repos?per_page=100&page=2").then(x => { if (!x.ok) throw 0; return x.json(); })
+    ]);
+    const mine = r1.concat(r2).filter(x => !x.fork);
+    const stars = mine.reduce((s, x) => s + x.stargazers_count, 0);
+    const langs = {};
+    mine.forEach(x => { if (x.language) langs[x.language] = (langs[x.language] || 0) + 1; });
+    const top = Object.entries(langs).sort((a, b) => b[1] - a[1]).slice(0, 5);
+    const max = top.length ? top[0][1] : 1;
+    const bars = top.map(([l, n]) => {
+      const w = Math.max(1, Math.round(n / max * 22));
+      return `  ${esc(l).padEnd(18)} ${"▓".repeat(w)}${"░".repeat(22 - w)} ${n}`;
+    }).join("\n");
+    return `<span class="eyebrow">$ gh stats --live</span>
+<pre>
+  public repos       ${u.public_repos}
+  followers          ${u.followers}
+  stars (non-fork)   ${stars}
+
+  top languages by repo count
+${bars}
+</pre>`;
+  } catch {
+    return `<span class="err">could not reach the GitHub API (rate limit, most likely).</span>
+try again in a few minutes, or see the stats cards in the <a href="https://github.com/SiddharthUchil" target="_blank" rel="noopener">profile README</a>.`;
+  }
+};
+
+T.exit = () => { die("Session closed (exit code 0)", false); return null; };
+T.sudo = () => `guest is not in the sudoers file. <span class="dim">this incident will be reported (it will not).</span>`;
+T.vim = T.nano = () => `this session is read-only, but nice instinct.`;
+T.cat = (arg) => {
+  const map = { "skills.yaml": T.skills, "about.md": T.about, "contact.txt": T.contact, "experience.log": T.experience, "stats.json": T.stats };
+  if (map[arg]) return map[arg]();
+  return `cat: ${esc(arg || "")}: no such file - try 'ls'`;
+};
+T.kill = (arg, raw) => {
+  if (/-9\s+portfolio/.test(raw)) { die("Process terminated (exit code 137)", true); return null; }
+  return `kill: usage: kill -9 portfolio`;
+};
+
+const ALIASES = { man: "help", "?": "help", resume: "experience", cv: "experience", work: "projects", repos: "projects", socials: "contact", email: "contact", quit: "exit", logout: "exit", welcome: "banner" };
+const COMPLETIONS = ["about", "banner", "cat ", "clear", "contact", "exit", "experience", "help", "history", "projects", "skills", "stats", "theme "];
+
+const history = [];
+let histIdx = -1;
+let cmdCount = 0;
+
+function esc(s) { return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;"); }
+
+function print(html, cls) {
+  const d = document.createElement("div");
+  d.className = "line" + (cls ? " " + cls : "");
+  d.innerHTML = html;
+  out.appendChild(d);
+  screenEl.scrollTop = screenEl.scrollHeight;
+  return d;
+}
+
+function echoCmd(raw) {
+  print(`<span class="accent">guest@siddharth:~$</span> ${esc(raw)}`);
+}
+
+async function run(raw) {
+  const trimmed = raw.trim();
+  echoCmd(raw);
+  if (!trimmed) return;
+  history.push(trimmed);
+  histIdx = history.length;
+  cmdCount++;
+  document.getElementById("st-cmds").textContent = cmdCount + " cmds";
+
+  let [name, ...rest] = trimmed.replace(/^\//, "").toLowerCase().split(/\s+/);
+  name = ALIASES[name] || name;
+  const fn = T[name];
+  if (!fn) { print(`bash: ${esc(name)}: command not found <span class="dim">(try 'help')</span>`); return; }
+  const res = await fn(rest.join(" "), trimmed);
+  if (res) print(res);
+  print("");
+}
+
+function die(title, killed) {
+  document.getElementById("exit-title").textContent = title;
+  document.getElementById("exit-x").style.color = killed ? "var(--err)" : "var(--ok)";
+  document.getElementById("exitcard").classList.add("show");
+}
+document.getElementById("reboot").addEventListener("click", () => {
+  document.getElementById("exitcard").classList.remove("show");
+  print(`<span class="ok">session restored.</span>`);
+  print("");
+  cmd.focus();
+});
+
+/* input handling */
+cmd.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    const v = cmd.value;
+    cmd.value = "";
+    run(v);
+  } else if (e.key === "ArrowUp") {
+    e.preventDefault();
+    if (histIdx > 0) { histIdx--; cmd.value = history[histIdx] || ""; }
+  } else if (e.key === "ArrowDown") {
+    e.preventDefault();
+    if (histIdx < history.length) { histIdx++; cmd.value = history[histIdx] || ""; }
+  } else if (e.key === "Tab") {
+    e.preventDefault();
+    const v = cmd.value.replace(/^\//, "").toLowerCase();
+    if (!v) return;
+    const hit = COMPLETIONS.find(c => c.startsWith(v));
+    if (hit) cmd.value = hit;
+  }
+});
+screenEl.addEventListener("click", () => {
+  if (!window.getSelection().toString()) cmd.focus();
+});
+
+/* chips */
+const chipbar = document.getElementById("chips");
+["help", "about", "experience", "projects", "skills", "stats", "contact", "exit"].forEach(c => {
+  const b = document.createElement("button");
+  b.textContent = c;
+  b.addEventListener("click", () => { run(c); cmd.focus(); });
+  chipbar.appendChild(b);
+});
+
+/* clock */
+function tick() {
+  const d = new Date();
+  document.getElementById("st-clock").textContent =
+    String(d.getHours()).padStart(2, "0") + ":" + String(d.getMinutes()).padStart(2, "0");
+}
+tick(); setInterval(tick, 30000);
+
+/* boot sequence */
+const BOOT = [
+  "[  <span class='ok'>OK</span>  ] establishing connection to siddharthuchil.github.io",
+  "[  <span class='ok'>OK</span>  ] loading profile: siddharth uchil (senior ai engineer)",
+  "[  <span class='ok'>OK</span>  ] mounting /portfolio (read-only)",
+  "[  <span class='ok'>OK</span>  ] starting shell session for guest@web"
+];
+const sleep = (ms) => new Promise(r => setTimeout(r, ms));
+
+async function typeInto(el, text, speed) {
+  for (const ch of text) { el.textContent += ch; await sleep(speed); }
+}
+
+async function boot() {
+  if (reduced) {
+    BOOT.forEach(b => print(b, "dim"));
+    print("");
+    print(T.banner());
+    print("");
+    echoCmd("whoami");
+    print(T.whoami());
+    print(`Type <span class="accent">'help'</span> to see available commands.`);
+    print("");
+  } else {
+    for (const b of BOOT) { print(b, "dim"); await sleep(220); }
+    await sleep(300);
+    print("");
+    print(T.banner());
+    print("");
+    await sleep(350);
+    const row = print(`<span class="accent">guest@siddharth:~$</span> <span class="typed"></span>`);
+    await typeInto(row.querySelector(".typed"), "whoami", 90);
+    await sleep(250);
+    print(T.whoami());
+    print(`Type <span class="accent">'help'</span> to see available commands.`);
+    print("");
+  }
+  promptrow.hidden = false;
+  cmd.focus();
+}
+boot();
+</script>
+</body>
+</html>
