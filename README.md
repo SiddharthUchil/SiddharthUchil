@@ -1,6 +1,9 @@
 <div align="center">
 
-[![Terminal typing header](https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=24&duration=3000&pause=1000&color=EDBD4E&center=true&vCenter=true&width=620&lines=%24+whoami;Siddharth+Uchil+%E2%80%94+AI+Engineer;GenAI+%C2%B7+RAG+%C2%B7+MLOps+%C2%B7+Evals;bridging+GenAI+and+production)](https://github.com/SiddharthUchil)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=24&duration=3000&pause=1000&color=EDBD4E&center=true&vCenter=true&width=620&lines=%24+whoami;Siddharth+Uchil+%E2%80%94+AI+Engineer;GenAI+%C2%B7+RAG+%C2%B7+MLOps+%C2%B7+Evals;bridging+GenAI+and+production">
+  <img alt="Terminal typing header" src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=24&duration=3000&pause=1000&color=9A6700&center=true&vCenter=true&width=620&lines=%24+whoami;Siddharth+Uchil+%E2%80%94+AI+Engineer;GenAI+%C2%B7+RAG+%C2%B7+MLOps+%C2%B7+Evals;bridging+GenAI+and+production">
+</picture>
 
 </div>
 
