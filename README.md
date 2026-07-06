@@ -1,9 +1,12 @@
 <div align="center">
 
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=24&duration=3000&pause=1000&color=EDBD4E&center=true&vCenter=true&width=620&lines=%24+whoami;Siddharth+Uchil+%E2%80%94+AI+Engineer;GenAI+%C2%B7+RAG+%C2%B7+MLOps+%C2%B7+Evals;bridging+GenAI+and+production">
-  <img alt="Terminal typing header" src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=24&duration=3000&pause=1000&color=9A6700&center=true&vCenter=true&width=620&lines=%24+whoami;Siddharth+Uchil+%E2%80%94+AI+Engineer;GenAI+%C2%B7+RAG+%C2%B7+MLOps+%C2%B7+Evals;bridging+GenAI+and+production">
+  <source media="(prefers-color-scheme: dark)" srcset="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=24&duration=3000&pause=1000&color=EDBD4E&center=true&vCenter=true&width=620&lines=%24+whoami;Siddharth+Uchil+-+AI+Engineer;GenAI+%C2%B7+RAG+%C2%B7+MLOps+%C2%B7+Evals;bridging+GenAI+and+production">
+  <img alt="Terminal typing header" src="https://readme-typing-svg.demolab.com/?font=Fira+Code&weight=500&size=24&duration=3000&pause=1000&color=9A6700&center=true&vCenter=true&width=620&lines=%24+whoami;Siddharth+Uchil+-+AI+Engineer;GenAI+%C2%B7+RAG+%C2%B7+MLOps+%C2%B7+Evals;bridging+GenAI+and+production">
 </picture>
+
+[**`$ ./portfolio --interactive ▶`**](https://siddharthuchil.github.io/SiddharthUchil/)
+<br><sub>type real commands in your browser · or scroll the static session below</sub>
 
 </div>
 
@@ -11,7 +14,7 @@
 siddharth@github:~/portfolio
 ─────────────────────────────────────────────────────
   host    Toronto, Canada
-  role    Data Scientist — Generative AI & MLOps @ Manulife
+  role    Senior AI Engineer - Generative AI & MLOps @ Manulife
   focus   production RAG · agents · LLM evaluation
   uptime  8+ years shipping ML to production
 ```
@@ -21,7 +24,7 @@ siddharth@github:~$ /help
 
   COMMANDS                  click a command below to run it
   ─────────                 ──────────────────────────────
-  /about        whoami — the short version
+  /about        whoami - the short version
   /experience   git log --career
   /projects     ls ./projects
   /skills       cat skills.yaml
@@ -38,7 +41,7 @@ siddharth@github:~$ /help
 > focus on rigorous evaluation and Responsible-AI guardrails in regulated
 > financial-services environments.
 >
-> I build retrieval-grounded assistants — and the MLOps and evaluation harnesses that
+> I build retrieval-grounded assistants - and the MLOps and evaluation harnesses that
 > keep them trustworthy once they're in front of real users. Bridging the gap between
 > GenAI demos and production is the job.
 
@@ -52,23 +55,23 @@ siddharth@github:~$ /help
 ```text
 $ git log --career --oneline
 
-* 2024–now   Manulife — Data Scientist, Generative AI & MLOps
+* 2024-now   Manulife - Senior AI Engineer, Generative AI & MLOps
 │            production RAG assistants for Group Benefits & Wealth Mgmt;
 │            LangGraph orchestration, eval frameworks, security guardrails,
 │            live-agent handoff for a high-volume contact centre
 │
-* 2022–2024  Canadian Western Bank — Senior Data Science Consultant
+* 2022-2024  Canadian Western Bank - Senior Data Science Consultant
 │            cloud-native ML for commercial financial documents;
 │            MLOps + AI governance (CI/CD retraining, IaC);
 │            96.2% doc-classification accuracy (CNN + BiLSTM ensemble)
 │
-* 2020–2022  Westland Insurance — Data Science Consultant
+* 2020-2022  Westland Insurance - Data Science Consultant
 │            transformers for NLP + visual anomaly detection (F1 0.855);
 │            real-time risk & sentiment signals for investigations
 │
-* 2018–2020  Suncor Energy — Consultant
+* 2018-2020  Suncor Energy - Consultant
              AI metadata extraction over 1M+ regulatory documents;
-             OCR + automation: −75% manual processing time
+             OCR + automation: -75% manual processing time
 ```
 
 </details>
@@ -102,11 +105,11 @@ $ ls -la ./projects
 $ cat skills.yaml
 
 genai:     [RAG, LangGraph, LangChain, LlamaIndex, prompt engineering,
-            LLM evaluation — MLflow · Ragas · DeepEval]
+            LLM evaluation - MLflow · Ragas · DeepEval]
 mlops:     [FastAPI, Docker, Kubernetes, GitHub Actions, Terraform,
             Airflow, MLflow, Evidently, Prometheus, Grafana]
-cloud:     [Azure — AKS · Functions · OpenAI, AWS, GCP]
-data:      [Azure AI Search — vector + agentic, Cosmos DB, PostgreSQL,
+cloud:     [Azure - AKS · Functions · OpenAI, AWS, GCP]
+data:      [Azure AI Search - vector + agentic, Cosmos DB, PostgreSQL,
             MongoDB, Azure SQL]
 languages: [Python, SQL, TypeScript, C++, Rust]
 ```
@@ -141,9 +144,9 @@ $ ping siddharth
 PING siddharth ... 3 packets transmitted, 3 received, 0% packet loss
 ```
 
-- 📫 email — [siddharth.uchil@gmail.com](mailto:siddharth.uchil@gmail.com)
-- 💼 linkedin — [in/siddharthuchil](https://www.linkedin.com/in/siddharthuchil/)
-- 🐦 x — [@siddharthuchil](https://twitter.com/siddharthuchil)
+- 📫 email - [siddharth.uchil@gmail.com](mailto:siddharth.uchil@gmail.com)
+- 💼 linkedin - [in/siddharthuchil](https://www.linkedin.com/in/siddharthuchil/)
+- 🐦 x - [@siddharthuchil](https://twitter.com/siddharthuchil)
 
 </details>
 
