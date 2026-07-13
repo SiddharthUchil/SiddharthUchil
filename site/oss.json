@@ -1,0 +1,25 @@
+{
+  "generated_at": "2026-07-13",
+  "user": "SiddharthUchil",
+  "total_prs": 1,
+  "repos": [
+    {
+      "repo": "tradermonty/claude-trading-skills",
+      "repo_url": "https://github.com/tradermonty/claude-trading-skills",
+      "stars": 2352,
+      "description": "Claude Code skills for equity investors and traders - market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
+      "language": "Python",
+      "prs": [
+        {
+          "number": 235,
+          "title": "fix(fmp): public-dataset fallback when no FMP tier serves S&P 500 constituents",
+          "url": "https://github.com/tradermonty/claude-trading-skills/pull/235",
+          "merged_at": "2026-07-12",
+          "additions": 217,
+          "deletions": 0,
+          "changed_files": 6
+        }
+      ]
+    }
+  ]
+}

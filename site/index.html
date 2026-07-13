@@ -233,6 +233,7 @@ T.help = () => `<span class="eyebrow">COMMANDS</span>
   about        who is siddharth
   experience   career timeline (git log style)
   projects     selected repos, with links
+  oss          merged PRs to other people's repos
   skills       cat skills.yaml
   stats        live github stats (fetched now)
   contact      how to reach me
@@ -290,6 +291,36 @@ ${REPO("FastAPI-LangChain-Streaming")}
 ${REPO("pytorch-lora")}
   LoRA (Low-Rank Adaptation) from scratch in PyTorch</div>`;
 
+T.oss = async () => {
+  print(`<span class="dim">loading contributions from oss.json ...</span>`);
+  try {
+    const data = await fetch("oss.json").then(x => { if (!x.ok) throw 0; return x.json(); });
+    const repos = data.repos || [];
+    if (!repos.length) return `no external merged PRs on record yet.`;
+    const link = (u, t) => `<a href="${u}" target="_blank" rel="noopener">${esc(t)}</a>`;
+    const prLine = (p) => `  ${link(p.url, "#" + p.number)} ${esc(p.title)}
+    <span class="dim">merged ${esc(p.merged_at)}${p.additions != null ? ` · +${p.additions} / ${p.changed_files} files` : ""}</span>`;
+    const flag = repos[0];
+    let html = `<span class="eyebrow">$ gh pr list --author @me --merged --external</span>
+<div class="block"><span class="accent">★ flagship</span>  ${link(flag.repo_url, flag.repo)}  <span class="dim">⭐ ${Number(flag.stars).toLocaleString()}</span>`;
+    if (flag.description) html += `
+  <span class="dim">${esc(flag.description)}</span>`;
+    flag.prs.forEach(p => { html += `
+${prLine(p)}`; });
+    repos.slice(1).forEach(r => {
+      html += `
+
+${link(r.repo_url, r.repo)}  <span class="dim">⭐ ${Number(r.stars).toLocaleString()}</span>`;
+      r.prs.forEach(p => { html += `
+${prLine(p)}`; });
+    });
+    return html + `</div>`;
+  } catch {
+    return `<span class="err">could not load oss.json (offline, or open via http).</span>
+see them on <a href="https://github.com/SiddharthUchil" target="_blank" rel="noopener">github</a>.`;
+  }
+};
+
 T.skills = () => `<span class="eyebrow">$ cat skills.yaml</span>
 <pre>
 genai:     [RAG, LangGraph, LangChain, LlamaIndex, prompt engineering,
@@ -325,7 +356,7 @@ T.history = () => history.length
   ? `<pre>${history.map((h, i) => `  ${String(i + 1).padStart(3)}  ${esc(h)}`).join("\n")}</pre>`
   : "history is empty";
 
-T.ls = () => `<pre>about.md  experience.log  projects/  skills.yaml  stats.json  contact.txt</pre>`;
+T.ls = () => `<pre>about.md  experience.log  projects/  skills.yaml  stats.json  oss.json  contact.txt</pre>`;
 
 T.stats = async () => {
   print(`<span class="dim">fetching live data from api.github.com ...</span>`);
@@ -364,7 +395,7 @@ T.exit = () => { die("Session closed (exit code 0)", false); return null; };
 T.sudo = () => `guest is not in the sudoers file. <span class="dim">this incident will be reported (it will not).</span>`;
 T.vim = T.nano = () => `this session is read-only, but nice instinct.`;
 T.cat = (arg) => {
-  const map = { "skills.yaml": T.skills, "about.md": T.about, "contact.txt": T.contact, "experience.log": T.experience, "stats.json": T.stats };
+  const map = { "skills.yaml": T.skills, "about.md": T.about, "contact.txt": T.contact, "experience.log": T.experience, "stats.json": T.stats, "oss.json": T.oss };
   if (map[arg]) return map[arg]();
   return `cat: ${esc(arg || "")}: no such file - try 'ls'`;
 };
@@ -373,8 +404,8 @@ T.kill = (arg, raw) => {
   return `kill: usage: kill -9 portfolio`;
 };
 
-const ALIASES = { man: "help", "?": "help", resume: "experience", cv: "experience", work: "projects", repos: "projects", socials: "contact", email: "contact", quit: "exit", logout: "exit", welcome: "banner" };
-const COMPLETIONS = ["about", "banner", "cat ", "clear", "contact", "exit", "experience", "help", "history", "projects", "skills", "stats", "theme "];
+const ALIASES = { man: "help", "?": "help", resume: "experience", cv: "experience", work: "projects", repos: "projects", contributions: "oss", contrib: "oss", pr: "oss", prs: "oss", socials: "contact", email: "contact", quit: "exit", logout: "exit", welcome: "banner" };
+const COMPLETIONS = ["about", "banner", "cat ", "clear", "contact", "exit", "experience", "help", "history", "oss", "projects", "skills", "stats", "theme "];
 
 const history = [];
 let histIdx = -1;
@@ -451,7 +482,7 @@ screenEl.addEventListener("click", () => {
 
 /* chips */
 const chipbar = document.getElementById("chips");
-["help", "about", "experience", "projects", "skills", "stats", "contact", "exit"].forEach(c => {
+["help", "about", "experience", "projects", "oss", "skills", "stats", "contact", "exit"].forEach(c => {
   const b = document.createElement("button");
   b.textContent = c;
   b.addEventListener("click", () => { run(c); cmd.focus(); });

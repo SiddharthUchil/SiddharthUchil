@@ -27,6 +27,7 @@ siddharth@github:~$ /help
   /about        whoami - the short version
   /experience   git log --career
   /projects     ls ./projects
+  /oss          open-source contributions
   /skills       cat skills.yaml
   /stats        gh stats --live
   /contact      ping siddharth
@@ -93,6 +94,24 @@ $ ls -la ./projects
 | [`ANPR-YOLOv8/`](https://github.com/SiddharthUchil/ANPR-YOLOv8) | ⭐ Automatic number-plate detection & recognition |
 | [`FastAPI-LangChain-Streaming/`](https://github.com/SiddharthUchil/FastAPI-LangChain-Streaming) | Streaming RAG with LCEL, FastAPI backend + frontend |
 | [`pytorch-lora/`](https://github.com/SiddharthUchil/pytorch-lora) | LoRA (Low-Rank Adaptation) implemented from scratch in PyTorch |
+
+</details>
+
+<details>
+<summary><code>$ /oss</code></summary>
+
+<br>
+
+```text
+$ gh pr list --author @me --state merged --external
+```
+
+<!-- OSS:START -->
+> 🌟 **Flagship** &nbsp; [`tradermonty/claude-trading-skills`](https://github.com/tradermonty/claude-trading-skills) &nbsp; ⭐ 2,352
+>
+> [#235 fix(fmp): public-dataset fallback when no FMP tier serves S&P 500 constituents](https://github.com/tradermonty/claude-trading-skills/pull/235) - merged 2026-07-12 (+217, 6 files)  
+> <sub>Claude Code skills for equity investors and traders - market analysis, technical charting, economic calendars, screeners, and trading strategy development.</sub>
+<!-- OSS:END -->
 
 </details>
 

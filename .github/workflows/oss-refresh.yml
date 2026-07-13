@@ -1,0 +1,42 @@
+name: Refresh OSS contributions
+
+on:
+  schedule:
+    - cron: "17 6 * * 1"   # weekly, Monday 06:17 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate contributions
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: SiddharthUchil
+        run: python scripts/gen_oss.py
+
+      - name: Commit and redeploy if changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain site/oss.json README.md)" ]; then
+            git add site/oss.json README.md
+            git commit -m "chore(oss): refresh open-source contributions"
+            git push
+            # Default GITHUB_TOKEN pushes do not trigger pages.yml, so kick it manually.
+            gh workflow run pages.yml --ref master || echo "pages dispatch skipped"
+          else
+            echo "No contribution changes."
+          fi
