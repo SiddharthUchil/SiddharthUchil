@@ -1,12 +1,12 @@
 {
-  "generated_at": "2026-07-13",
+  "generated_at": "2026-07-20",
   "user": "SiddharthUchil",
   "total_prs": 1,
   "repos": [
     {
       "repo": "tradermonty/claude-trading-skills",
       "repo_url": "https://github.com/tradermonty/claude-trading-skills",
-      "stars": 2357,
+      "stars": 2452,
       "description": "Claude Code skills for equity investors and traders - market analysis, technical charting, economic calendars, screeners, and trading strategy development.",
       "language": "Python",
       "prs": [

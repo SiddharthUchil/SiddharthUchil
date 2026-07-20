@@ -107,7 +107,7 @@ $ gh pr list --author @me --state merged --external
 ```
 
 <!-- OSS:START -->
-> 🌟 **Flagship** &nbsp; [`tradermonty/claude-trading-skills`](https://github.com/tradermonty/claude-trading-skills) &nbsp; ⭐ 2,357
+> 🌟 **Flagship** &nbsp; [`tradermonty/claude-trading-skills`](https://github.com/tradermonty/claude-trading-skills) &nbsp; ⭐ 2,452
 >
 > [#235 fix(fmp): public-dataset fallback when no FMP tier serves S&P 500 constituents](https://github.com/tradermonty/claude-trading-skills/pull/235) - merged 2026-07-12 (+217, 6 files)  
 > <sub>Claude Code skills for equity investors and traders - market analysis, technical charting, economic calendars, screeners, and trading strategy development.</sub>
