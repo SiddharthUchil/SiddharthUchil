@@ -1,0 +1,42 @@
+name: Refresh stats cards
+
+on:
+  schedule:
+    - cron: "41 6 * * 1"   # weekly, Monday 06:41 UTC
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  refresh:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Regenerate stats cards
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_USER: SiddharthUchil
+        run: python scripts/gen_stats.py
+
+      - name: Commit and redeploy if changed
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ -n "$(git status --porcelain site)" ]; then
+            git add site/stats-*.svg site/langs-*.svg site/activity-*.svg
+            git commit -m "chore(stats): refresh profile stats cards"
+            git push
+            # Default GITHUB_TOKEN pushes do not trigger pages.yml, so kick it manually.
+            gh workflow run pages.yml --ref master || echo "pages dispatch skipped"
+          else
+            echo "No stats changes."
+          fi

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="415" height="195" viewBox="0 0 415 195" role="img" aria-label="$ gh top-langs">
+<style>
+  .t { font: 13px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #24292f; }
+  .d { font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #57606a; }
+  .a { font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #9a6700; }
+  .n { font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #9a6700; }
+</style>
+<rect x="0.5" y="0.5" width="414" height="194" rx="6" fill="#ffffff" stroke="#d0d7de"/>
+<text x="20" y="30" class="a">$ gh top-langs</text>
+<line x1="20" y1="44" x2="395" y2="44" stroke="#d0d7de"/>
+<text x="20" y="68" class="t">Python</text>
+<rect x="160" y="59" width="175" height="11" rx="2" fill="#eaeef2"/>
+<rect x="160" y="59" width="175" height="11" rx="2" fill="#9a6700"/>
+<text x="395" y="68" class="n" text-anchor="end">36</text>
+<text x="20" y="91" class="t">Jupyter Notebook</text>
+<rect x="160" y="82" width="175" height="11" rx="2" fill="#eaeef2"/>
+<rect x="160" y="82" width="78" height="11" rx="2" fill="#9a6700"/>
+<text x="395" y="91" class="n" text-anchor="end">16</text>
+<text x="20" y="114" class="t">TypeScript</text>
+<rect x="160" y="105" width="175" height="11" rx="2" fill="#eaeef2"/>
+<rect x="160" y="105" width="24" height="11" rx="2" fill="#9a6700"/>
+<text x="395" y="114" class="n" text-anchor="end">5</text>
+<text x="20" y="137" class="t">HTML</text>
+<rect x="160" y="128" width="175" height="11" rx="2" fill="#eaeef2"/>
+<rect x="160" y="128" width="15" height="11" rx="2" fill="#9a6700"/>
+<text x="395" y="137" class="n" text-anchor="end">3</text>
+<text x="20" y="160" class="t">HCL</text>
+<rect x="160" y="151" width="175" height="11" rx="2" fill="#eaeef2"/>
+<rect x="160" y="151" width="6" height="11" rx="2" fill="#9a6700"/>
+<text x="395" y="160" class="n" text-anchor="end">1</text>
+<text x="20" y="183" class="d">by repo count, forks excluded</text>
+</svg>

@@ -145,11 +145,20 @@ $ gh stats --live
 ```
 
 <div align="center">
-  <img width="49%" height="195px" src="https://github-readme-stats-sigma-five.vercel.app/api?username=SiddharthUchil&show_icons=true&count_private=true&hide_border=true&title_color=edbd4e&icon_color=edbd4e&text_color=c9d1d9&bg_color=0d1117" alt="Siddharth's GitHub stats" />
-  <img width="41%" height="195px" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=SiddharthUchil&layout=compact&hide_border=true&title_color=edbd4e&text_color=c9d1d9&bg_color=0d1117" alt="Top languages" />
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SiddharthUchil/SiddharthUchil/master/site/stats-dark.svg">
+    <img width="49%" alt="GitHub stats" src="https://raw.githubusercontent.com/SiddharthUchil/SiddharthUchil/master/site/stats-light.svg">
+  </picture>
+  <picture>
+    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SiddharthUchil/SiddharthUchil/master/site/langs-dark.svg">
+    <img width="41%" alt="Top languages" src="https://raw.githubusercontent.com/SiddharthUchil/SiddharthUchil/master/site/langs-light.svg">
+  </picture>
 </div>
 
-<img width="100%" src="https://github-readme-activity-graph.vercel.app/graph?username=SiddharthUchil&bg_color=0d1117&color=edbd4e&line=edbd4e&point=c9d1d9&area=true&hide_border=true" alt="Contribution activity graph" />
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/SiddharthUchil/SiddharthUchil/master/site/activity-dark.svg">
+  <img width="100%" alt="Contribution activity, last year" src="https://raw.githubusercontent.com/SiddharthUchil/SiddharthUchil/master/site/activity-light.svg">
+</picture>
 
 </details>
 

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" role="img" aria-label="$ gh stats --live">
+<style>
+  .t { font: 13px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #c9d1d9; }
+  .d { font: 12px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #8b949e; }
+  .a { font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #edbd4e; }
+  .n { font: 600 13px ui-monospace, SFMono-Regular, Menlo, Consolas, 'Liberation Mono', monospace; fill: #edbd4e; }
+</style>
+<rect x="0.5" y="0.5" width="494" height="194" rx="6" fill="#0d1117" stroke="#30363d"/>
+<text x="20" y="30" class="a">$ gh stats --live</text>
+<line x1="20" y1="44" x2="475" y2="44" stroke="#30363d"/>
+<text x="20" y="68" class="t">public repos</text>
+<text x="475" y="68" class="n" text-anchor="end">140</text>
+<text x="20" y="91" class="t">followers</text>
+<text x="475" y="91" class="n" text-anchor="end">64</text>
+<text x="20" y="114" class="t">stars (non-fork)</text>
+<text x="475" y="114" class="n" text-anchor="end">43</text>
+<text x="20" y="137" class="t">contributions (1y)</text>
+<text x="475" y="137" class="n" text-anchor="end">561</text>
+<text x="20" y="160" class="t">commits / PRs (1y)</text>
+<text x="475" y="160" class="n" text-anchor="end">51 / 6</text>
+<text x="20" y="183" class="d">member since Feb 2018</text>
+</svg>
