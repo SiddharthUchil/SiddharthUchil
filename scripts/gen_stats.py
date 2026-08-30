@@ -207,13 +207,20 @@ def render_activity(d, p):
                f' stroke-width="2" stroke-linejoin="round"/>')
     out.append(f'<line x1="{left}" y1="{base}" x2="{right}" y2="{base}" stroke="{p["border"]}"/>')
 
-    seen = set()
+    # The window opens mid-month, so the leading partial month can sit a week
+    # from the next one and collide ("AugSep"). Drop the earlier of any crowded
+    # pair, which keeps the remaining labels a consecutive run.
+    seen, marks = set(), []
     for i, (first_day, _) in enumerate(weeks):
         month = datetime.strptime(first_day, "%Y-%m-%d").strftime("%b")
         if month in seen:
             continue
         seen.add(month)
-        out.append(f'<text x="{left + i * step:.1f}" y="{base + 20}" class="d">{month}</text>')
+        marks.append((left + i * step, month))
+    for j, (x, month) in enumerate(marks):
+        if j + 1 < len(marks) and marks[j + 1][0] - x < 42:
+            continue
+        out.append(f'<text x="{x:.1f}" y="{base + 20}" class="d">{month}</text>')
     out.append("</svg>")
     return "\n".join(out)
 
