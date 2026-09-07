@@ -9,14 +9,14 @@
 <text x="20" y="30" class="a">$ gh stats --live</text>
 <line x1="20" y1="44" x2="475" y2="44" stroke="#d0d7de"/>
 <text x="20" y="68" class="t">public repos</text>
-<text x="475" y="68" class="n" text-anchor="end">140</text>
+<text x="475" y="68" class="n" text-anchor="end">141</text>
 <text x="20" y="91" class="t">followers</text>
-<text x="475" y="91" class="n" text-anchor="end">64</text>
+<text x="475" y="91" class="n" text-anchor="end">65</text>
 <text x="20" y="114" class="t">stars (non-fork)</text>
 <text x="475" y="114" class="n" text-anchor="end">43</text>
 <text x="20" y="137" class="t">contributions (1y)</text>
-<text x="475" y="137" class="n" text-anchor="end">563</text>
+<text x="475" y="137" class="n" text-anchor="end">575</text>
 <text x="20" y="160" class="t">commits / PRs (1y)</text>
-<text x="475" y="160" class="n" text-anchor="end">53 / 6</text>
+<text x="475" y="160" class="n" text-anchor="end">57 / 6</text>
 <text x="20" y="183" class="d">member since Feb 2018</text>
 </svg>

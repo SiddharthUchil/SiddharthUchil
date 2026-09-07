@@ -18,8 +18,8 @@
 <text x="395" y="91" class="n" text-anchor="end">16</text>
 <text x="20" y="114" class="t">TypeScript</text>
 <rect x="160" y="105" width="175" height="11" rx="2" fill="#eaeef2"/>
-<rect x="160" y="105" width="24" height="11" rx="2" fill="#9a6700"/>
-<text x="395" y="114" class="n" text-anchor="end">5</text>
+<rect x="160" y="105" width="29" height="11" rx="2" fill="#9a6700"/>
+<text x="395" y="114" class="n" text-anchor="end">6</text>
 <text x="20" y="137" class="t">HTML</text>
 <rect x="160" y="128" width="175" height="11" rx="2" fill="#eaeef2"/>
 <rect x="160" y="128" width="15" height="11" rx="2" fill="#9a6700"/>
